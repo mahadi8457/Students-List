@@ -1,0 +1,22 @@
+<template name="Std">
+<tr class="{{#if checked}}checked{{/if}}">
+  <td><input type="checkbox" checked="{{checked}}" class="toggle-checked" /></td>
+  <td>{{name}}</td>
+  <td>{{email}}</td>
+  <td>{{phone}}</td>
+  <td>{{dob}}</td>
+  <td><button class="delete">&times;</button></td>
+
+</tr>
+</template>
+
+<template name="frm">
+  <form class="new-std w3-container">
+      <input class="w3-input" type="text" name="name" placeholder="Name" />
+      <input class="w3-input" type="email" name="email" placeholder="Email" />
+      <input class="w3-input" type="text" name="phone" placeholder="Phone" />
+      <input class="w3-input" type="date" name="dob" placeholder="Date of birth" />
+      <br>
+      <input class="w3-btn w3-padding w3-green" type="submit" value="Save">
+  </form>
+</template>

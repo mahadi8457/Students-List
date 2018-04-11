@@ -1,0 +1,29 @@
+<body>
+  <div class="w3-row">
+  <div class="w3-container w3-half">
+    <div class="w3-card-4">
+      <div class="w3-container w3-green">
+        <h2>Add Students Info</h2>
+      </div>
+        {{> frm}}
+        <br> 
+    </div>
+  </div>
+  <div class="w3-container w3-half w3-responsive w3-card-4">
+    <h2>Students List</h2>
+  <table class="w3-table w3-centered w3-hoverable">
+    <tr class="w3-green">
+      <th>Check box</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Date Of Birth</th>
+      <th>Action</th>
+    </tr>
+    {{#each list}}
+      {{> Std}}
+    {{/each}}
+  </table>
+</div>
+</div>
+</body>
