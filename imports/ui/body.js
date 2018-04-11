@@ -24,13 +24,18 @@ Template.body.events({
     var dob = event.target.dob.value;
 
     // Insert a task into the collection
-    Lists.insert({
-      name: name,
-      email: email,
-      phone: phone,
-      dob: dob,
-      createdAt: new Date(), // current time
-    });
+    // Lists.insert({
+    //   name: name,
+    //   email: email,
+    //   phone: phone,
+    //   dob: dob,
+    //   createdAt: new Date(), // current time
+    //   owner: Meteor.userId(),
+    //   username: Meteor.user().username,
+    // });
+
+    Meteor.call('lists.insert', name, email, phone, dob);
+
 
     // Clear form
     event.target.name.value = '';
@@ -40,4 +45,18 @@ Template.body.events({
 
     return false;
   },
+});
+
+
+Template.Std.events({
+  'click .delete'() {
+    // Lists.remove(this._id);
+    // check user
+    if(Lists.owner !== Meteor.userId()){
+      throw new Meteor.Error('NOT Authorised')
+    }
+    Meteor.call('lists.remove', this);
+
+  },
+
 });
