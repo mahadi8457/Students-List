@@ -23,7 +23,7 @@ Template.body.events({
     var phone = event.target.phone.value;
     var dob = event.target.dob.value;
 
-    // Insert a task into the collection
+
     // Lists.insert({
     //   name: name,
     //   email: email,
@@ -34,6 +34,8 @@ Template.body.events({
     //   username: Meteor.user().username,
     // });
 
+    
+    // Insert a task into the collection
     Meteor.call('lists.insert', name, email, phone, dob);
 
 
